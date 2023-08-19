@@ -41,3 +41,13 @@ my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+# Allow users add a 2nd entry box
+add_my_fruit = st.text_input("Add Your Favorite Fruit:", "")
+
+# Display the entered fruit
+st.write("You added:", add_my_fruit)
+
+# Close the cursor and connection
+my_cur.close()
+my_cnx.close()
